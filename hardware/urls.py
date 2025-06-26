@@ -1,7 +1,7 @@
 from django.urls import path
 
-from hardware.views import temperature
+# from hardware.views import temperature
 
 urlpatterns = [
-    path("temperature/", temperature, name="temperature"),
+    # path("temperature/", temperature, name="temperature"),
 ]
