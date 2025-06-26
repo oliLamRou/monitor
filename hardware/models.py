@@ -4,5 +4,8 @@ from django.db import models
 # Create your models here.
 class Stats(models.Model):
     datetime = models.DateTimeField(auto_now=True)
-    # last_try = models.DateField(auto_now=True)
-    soc_temp = models.FloatField()
+    cpu_perc = models.FloatField()
+    cpu_temp = models.FloatField()
+    mem_perc = models.FloatField()
+    bytes_sent = models.FloatField()
+    bytes_recv = models.FloatField()
