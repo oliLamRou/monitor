@@ -14,6 +14,8 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
+import dj_database_url
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -83,15 +85,22 @@ WSGI_APPLICATION = "monitor.wsgi.application"
 #         "NAME": BASE_DIR / "db.sqlite3",
 #     },
 # }
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": os.getenv("DB_NAME"),
+#         "USER": os.getenv("DB_USERNAME"),
+#         "PASSWORD": os.getenv("DB_PASSWORD"),
+#         "HOST": "localhost",
+#         "PORT": "5432",
+#     }
+# }
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("DB_NAME"),
-        "USER": os.getenv("DB_USERNAME"),
-        "PASSWORD": os.getenv("DB_PASSWORD"),
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
+    "default": dj_database_url.config(
+        default=os.getenv("MONITOR_APP_DB"),
+        conn_max_age=6000,
+    )
 }
 
 # Password validation
