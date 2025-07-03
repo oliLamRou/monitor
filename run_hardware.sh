@@ -18,7 +18,7 @@ cd "$(dirname "$0")" || exit 1
 echo "Current working directory: $(pwd)"
 
 # Pull the latest changes
-git pull
+git pull -q
 
 # Check if virtual environment exists
 if [ ! -d ".venv" ]; then
