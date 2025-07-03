@@ -8,7 +8,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         data = self.get_data()
         stats = Stats(**data)
-        print(f"Current Hardware Stats: {data}")
+        # print(f"Current Hardware Stats: {data}")
         stats.save()
 
     def get_data(self):

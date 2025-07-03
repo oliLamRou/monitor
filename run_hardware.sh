@@ -31,7 +31,7 @@ fi
 . .venv/bin/activate
 
 # Install requirements
-pip install -r requirements.txt
+pip install -r requirements.txt -q
 
 # Run the target Python script
 python3 manage.py hardware
